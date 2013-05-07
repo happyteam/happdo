@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>pptTemplate1</title>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="script/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/pptTemplate.css">
+	<link rel="stylesheet" href="css/css_reset.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+		$(document).ready( function(){
+            alert($(document).height());
+            $(".context").css('height',$(document).height());
+      	});
+
+		function shiftColor(){
+			//alert("123");
+			//alert($(window).height());
+			//window.scrollTo(0,400);
+			//$(".context").scrollTop($(document).height());
+		}
+	</script>
+</head>
+<body onclick="shiftColor();">
+	<header>
+		<ul>
+			<li>link1</li>
+			<li>link2</li>
+			<li>link3</li>
+			<li>link4</li>
+		</ul>
+		<span class="clearLeft"/>		
+	</header>
+	<div class="context" id="context_yellow" onclick="">
+		context
+	</div>
+	<div class="context" id="context_skin">
+		context
+	</div>
+	<div class="context" id="context_blue">
+		context
+	</div>
+	<div class="context" id="context_purple">
+		context
+	</div>
+	<footer class="dborder color_black">
+		<p>No Limit Company</p>
+	</footer>
+</body>
+</html>
