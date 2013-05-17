@@ -10,16 +10,24 @@
 	<link rel="stylesheet" href="css/css_reset.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script type="text/javascript">
+		function heightReset(){
+			 $(".context").css('height',$(document).height());
+		}
+
 		$(document).ready( function(){
             alert($(document).height());
-            $(".context").css('height',$(document).height());
+           	heightReset();
       	});
 
+      	$(window).resize(function(){
+      		heightReset();
+      	})
+
 		function shiftColor(){
-			//alert("123");
-			//alert($(window).height());
-			//window.scrollTo(0,400);
-			//$(".context").scrollTop($(document).height());
+			alert("123");
+			alert($(window).height());
+			window.scrollTo(0,400);
+			$(".context").scrollTop($(document).height());
 		}
 	</script>
 </head>
