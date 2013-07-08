@@ -160,6 +160,9 @@ header ul li a{
 
 #context_color_area1{
 	background-color: #F3EFE8;
+	background-image: url(../images/bg_squre2.png);
+/*	background-position: 600px 200px 100px 600px;*/
+
 }
 
 /*#area1_header{
@@ -189,7 +192,7 @@ header ul li a{
 .main_container{
 	width:80% ;
 	height:550px; /*5*/
-	/*border:2px solid #A3A3A3;*/
+	border:1px solid #A3A3A3;
 	margin:70px auto;
 	padding: 30px;
 	-webkit-border-radius: 25px;

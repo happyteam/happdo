@@ -13,7 +13,10 @@
 	<link rel="stylesheet" href="css/pptTemplate.css">
 	<script type="text/javascript">
 		function heightReset(){
-			 $(".context").css('height',$(document).height());
+			 var screenHeight = $(document).height();
+			 var area1Height = $(document).height() - $(".main_container").height();
+			 $(".context").css('height',screenHeight);
+			 $(".main_container").css('height',screenHeight-300);
 		}
 
 		$(document).ready( function(){
