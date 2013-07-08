@@ -13,10 +13,11 @@
 	<link rel="stylesheet" href="css/pptTemplate.css">
 	<script type="text/javascript">
 		function heightReset(){
-			 var screenHeight = $(document).height();
-			 var area1Height = $(document).height() - $(".main_container").height();
+
+			 var screenHeight = screen.height -120;
+			 var area1Height = $(".main_container").height();
 			 $(".context").css('height',screenHeight);
-			 $(".main_container").css('height',screenHeight-300);
+			 $(".main_container").css('height',area1Height);
 		}
 
 		$(document).ready( function(){
@@ -24,16 +25,17 @@
            	heightReset();
       	});
 
+
+      	$(window).resize(function(){
+      		heightReset();
+      	})
+
 		//slideshow
       	$(window).load(function() {
 		  $('.flexslider').flexslider({
 		    animation: "slide"
 		  });
 		});
-
-      	$(window).resize(function(){
-      		heightReset();
-      	})
 
 		// function shiftColor(){
 		// 	alert("123");
@@ -46,17 +48,16 @@
 <body>
 	<header>
 		<ul>
-			<li class="header_link1 header_word_color"><a href="#area1">Service Introduce</a></li>
-			<li class="header_link2 header_word_color"><a href="#area2">link2</a></li>
-			<li class="header_link3 header_word_color"><a href="#area3">link3</a></li>
+			<li class="header_link4 header_word_color"><a href="#area1">Service Introduce</a></li>
+			<li class="header_link4 header_word_color"><a href="#area2">link2</a></li>
+			<li class="header_link4 header_word_color"><a href="#area3">link3</a></li>
 			<li class="header_link4 header_word_color"><a href="#area4">Happy Team</a></li>
 		</ul>
 		<span class="clearLeft"/>		
 	</header>
 	<div class="context context_shadow" id="context_color_area1">
-<!-- 		<img src="images/roof.png" id="area1_header"> -->
-		<!-- add link -->
 		<a name="area1"></a>
+		<div id="header_bg"></div>
 		<div class="row">
 			<div class="main_container">
 				<div class="flexslider">
@@ -76,9 +77,11 @@
 					    </li>
 					    <!--end interator-->
 				  	</ul>
+
 				</div>
 				<div class="span4">
-					123
+					<h2>Service Introduce</h2>
+					<p>This is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for testThis is area 1, service introduce, for test, for test</p>
 				</div>
 				<span class="clearLeft"></span>
 			</div>
@@ -86,7 +89,15 @@
 	</div>
 	<div class="context context_shadow" id="context_color_area2">
 		<a name="area2"></a>
-		context
+		<div id="area2_inner_container">
+			<h2>This is area two...</h2>
+			<ul class="dborder color_blue" id="orderLeft">
+				<li class="span3">1</li>
+				<li class="span3">2</li>
+				<li class="span3">3</li>
+				<li class="span3">3</li>
+			</ul>
+		</div>
 	</div>
 	<div class="context context_shadow" id="context_color_area3">
 		<a name="area3"></a>
