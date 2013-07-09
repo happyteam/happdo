@@ -14,8 +14,15 @@
 	<script type="text/javascript">
 		function heightReset(){
 
-			 var screenHeight = screen.height -120;
-			 var area1Height = $(".main_container").height();
+			 var screenHeight = screen.height;
+			 alert(screenHeight);
+			 var area1Height = screenHeight-$("#header_bg").height() - $(".main_container").css('margin-top') - $(".main_container").css('margin-bottom');
+			 // alert($(window).height());
+			 // alert($(document).height());
+			 alert(area1Height);
+			 alert($("#header_bg").height());
+			 alert($(".main_container").css('margin-top'));
+			 alert($(".main_container").css('margin-bottom'));
 			 $(".context").css('height',screenHeight);
 			 $(".main_container").css('height',area1Height);
 		}
