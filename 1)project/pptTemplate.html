@@ -15,26 +15,44 @@
 		function heightReset(){
 
 			 var screenHeight = screen.height;
-			 alert(screenHeight);
+			 // alert(screenHeight);
 			 var area1Height = screenHeight-$("#header_bg").height() - $(".main_container").css('margin-top') - $(".main_container").css('margin-bottom');
 			 // alert($(window).height());
 			 // alert($(document).height());
-			 alert(area1Height);
-			 alert($("#header_bg").height());
-			 alert($(".main_container").css('margin-top'));
-			 alert($(".main_container").css('margin-bottom'));
-			 $(".context").css('height',screenHeight);
+			 // alert(area1Height);
+			 // alert($("#header_bg").height());
+			 // alert($(".main_container").css('margin-top'));
+			 // alert($(".main_container").css('margin-bottom'));
+			 $(".context").css('min-height',screenHeight);
 			 $(".main_container").css('height',area1Height);
+
 		}
 
 		$(document).ready( function(){
             //alert($(document).height());
+            var area2_li3 = $(".area2_ul .span3").css('width');
+      		area2_li3 = area2_li3.substring(0,area2_li3.indexOf('px'))*4;
+      		$("#area2_li3").val(area2_li3);
            	heightReset();
       	});
 
 
       	$(window).resize(function(){
       		heightReset();
+      		var area2_ul = parseInt($("#area2_inner_container ul").css('width'));
+      		//area2_ul = area2_ul.substring(0,area2_ul.indexOf('px'));
+      		var area2_li3=parseInt($("#area2_li3").val());
+
+      		console.log("area2_ul:"+area2_ul+" area2_li3:"+area2_li3);
+      		console.log("area2_ul<area2_li3:"+(area2_ul*1)<=(area2_li3*1));
+
+      		if(area2_ul<area2_li3){
+      			$(".area2_ul .span3").css('width','47%');
+      			console.log('123');
+      		}
+      		else
+      			$(".area2_ul .span3").css('width','23%');
+
       	})
 
 		//slideshow
@@ -53,6 +71,7 @@
 	</script>
 </head>
 <body>
+	<input type="hidden" id="area2_li3" name="area2_li3"/>
 	<header>
 		<ul>
 			<li class="header_link4 header_word_color"><a href="#area1">Service Introduce</a></li>
@@ -94,15 +113,39 @@
 			</div>
 		</div>
 	</div>
+	<a name="area2"></a>
 	<div class="context context_shadow" id="context_color_area2">
-		<a name="area2"></a>
-		<div id="area2_inner_container">
+		<div id="area2_inner_container" class="color_blue">
 			<h2>This is area two...</h2>
-			<ul class="dborder color_blue" id="orderLeft">
-				<li class="span3">1</li>
-				<li class="span3">2</li>
-				<li class="span3">3</li>
-				<li class="span3">3</li>
+			<ul class="dborder color_blue area2_ul row" id="orderLeft">
+				<li class="span3">
+					<img src="images/1.png">
+					<h3>Descrtion one</h3>
+					<p>
+						this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1，this is area2, part 1, area2 part1this is area2, part 1, area2 part1this is area2, part 1, area2 part1
+					</p>
+				</li>
+				<li class="span3">
+					<img src="images/2.png">
+					<h3>Descrtion two</h3>
+					<p>
+						this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1，this is area2, part 1, area2 part1this is area2, part 1, area2 part1this is area2, part 1, area2 part1
+					</p>
+				</li>
+				<li class="span3">
+					<img src="images/3.png">
+					<h3>Descrtion three</h3>
+					<p>
+						this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1，this is area2, part 1, area2 part1this is area2, part 1, area2 part1this is area2, part 1, area2 part1
+					</p>
+				</li>
+				<li class="span3">
+					<img src="images/4.png">
+					<h3>Descrtion four</h3>
+					<p>
+						this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1,this is area2, part 1, area2 part1，this is area2, part 1, area2 part1this is area2, part 1, area2 part1this is area2, part 1, area2 part1
+					</p>
+				</li>
 			</ul>
 		</div>
 	</div>
