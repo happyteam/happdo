@@ -264,10 +264,10 @@ header ul li a{
 .area2_ul li{
 	border:red solid 2px;
 	margin:10px;
-	height: 500px;
+	min-height: 450px;
 	background-color: white;
 	text-align: center;
-	min-width: 250px;
+	min-width: 150px;
 }	
 
 .area2_ul li h3{
