@@ -237,14 +237,20 @@ header ul li a{
 }
 
 /*area2*/
+.area_block{
+	width: 100%;
+	min-height: 70px;
+	visibility: hidden;
+}
+
 
 #area2_inner_container{
 	width: 100%;
 	height: 80%;
-	margin:20px auto;
+	margin:0 auto;
 }
 
-#area2_inner_container h2{
+#area2_inner_container h2,#area3_inner_container h2{
 	font-size: 40px;
 	color: #636365;
 	font-weight: lighter;
@@ -262,7 +268,7 @@ header ul li a{
 }*/
 
 .area2_ul li{
-	border:red solid 2px;
+	border:brown solid 1px;
 	margin:10px;
 	min-height: 450px;
 	background-color: white;
@@ -288,3 +294,50 @@ header ul li a{
 }
 
 
+/*area3*/
+
+#area3_inner_container{
+	width: 90%;
+	height: 80%;
+	margin:0 auto;
+	text-align: center;
+}
+
+.area3_arrow{
+	height: 100%;
+	width: 8%;
+	float:left;
+	vertical-align: middle;
+	text-align: center;
+	display: block;
+}
+
+.area3_arrow img{
+	cursor: pointer;
+}
+
+#area3_content{
+	width: 80%;
+	height: inherit;
+	float:left;
+	display: block;
+	border-top:1px #E7F1D8 solid;
+	border-bottom: 1px #E7F1D8 solid;
+	box-shadow: 0 3px 130px -14px rgba(31, 81, 31, 0.5);
+	overflow: hidden;
+}
+
+#area3_content .show{
+	width: 31%;
+	height: 400px;
+	background-color: #E9EAEE;
+/*    border-right: gray 1px solid;*/
+	border:gray 1px solid;
+    float: left;
+    display: block;
+    margin:1%; 
+}
+
+/*#area3_content .show_right{
+	border-right: none;
+}*/

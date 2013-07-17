@@ -68,6 +68,11 @@
 		// 	window.scrollTo(0,400);
 		// 	$(".context").scrollTop($(document).height());
 		// }
+		function shift(dirction){
+			alert(dirction);
+		}
+
+
 	</script>
 </head>
 <body>
@@ -76,7 +81,7 @@
 		<ul>
 			<li class="header_link4 header_word_color"><a href="#area1">Service Introduce</a></li>
 			<li class="header_link4 header_word_color"><a href="#area2">link2</a></li>
-			<li class="header_link4 header_word_color"><a href="#area3">link3</a></li>
+			<li class="header_link4 header_word_color"><a href="#area3">作品</a></li>
 			<li class="header_link4 header_word_color"><a href="#area4">Happy Team</a></li>
 		</ul>
 		<span class="clearLeft"/>		
@@ -115,9 +120,9 @@
 	</div>
 	<a name="area2"></a>
 	<div class="context context_shadow" id="context_color_area2">
-		<div id="area2_inner_container" class="color_blue">
+		<div id="area2_inner_container">
 			<h2>This is area two...</h2>
-			<ul class="dborder color_blue area2_ul row" id="orderLeft">
+			<ul class="area2_ul row" id="orderLeft">
 				<li class="span3">
 					<img src="images/1.png">
 					<h3>Descrtion one</h3>
@@ -149,9 +154,21 @@
 			</ul>
 		</div>
 	</div>
+	<a name="area3"></a>
 	<div class="context context_shadow" id="context_color_area3">
-		<a name="area3"></a>
-		context
+		<div class="area_block"></div>
+		<div id="area3_inner_container">
+			<h2>This is area three...</h2>
+			<div class="area3_arrow"><img src="images/left_arrow.png" alt="<<<" onclick="shift('Left')"></div>
+			<div id="area3_content">
+				<div class="show">123</div>
+				<div class="show">456</div>
+				<div class="show">789</div>
+				<div class="show show_right">012</div>				
+			</div>
+			<div class="area3_arrow" ><img src="images/right_arrow.png" alt=">>>" onclick="shift('Right')"></div>
+			<div class="clearLeft"></div>
+		</div>
 	</div>
 	<div class="context context_shadow" id="context_color_area4">
 		<a name="area4"></a>
