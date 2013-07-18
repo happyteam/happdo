@@ -250,7 +250,7 @@ header ul li a{
 	margin:0 auto;
 }
 
-#area2_inner_container h2,#area3_inner_container h2{
+#area2_inner_container h2{
 	font-size: 40px;
 	color: #636365;
 	font-weight: lighter;
@@ -300,31 +300,43 @@ header ul li a{
 	width: 90%;
 	height: 80%;
 	margin:0 auto;
+	vertical-align: middle;
 	text-align: center;
 }
 
-.area3_arrow{
-	height: 100%;
-	width: 8%;
-	float:left;
-	vertical-align: middle;
+#area3_inner_container h2{
+	font-size: 40px;
+	color: #636365;
+	font-weight: lighter;
 	text-align: center;
-	display: block;
+	margin-bottom: 35px;
+}
+
+.area3_arrow{
+	width: 8%;
+/*	float:left;*/
+/*	height: 420px;*/
+/*	margin-top:-50% ;*/
+	display: inline-block;
 }
 
 .area3_arrow img{
 	cursor: pointer;
+/*	display: block;*/
+/*	width: 50px;
+	height: 50px;*/
+/*	margin-top:150%;*/
 }
 
 #area3_content{
-	width: 80%;
-	height: inherit;
-	float:left;
-	display: block;
+	width: 82%;
+	height: 420px;
+/*	float:left;*/
+	display: inline-block;
 	border-top:1px #E7F1D8 solid;
 	border-bottom: 1px #E7F1D8 solid;
 	box-shadow: 0 3px 130px -14px rgba(31, 81, 31, 0.5);
-	overflow: hidden;
+	overflow-y:hidden;
 }
 
 #area3_content .show{
@@ -335,7 +347,7 @@ header ul li a{
 	border:gray 1px solid;
     float: left;
     display: block;
-    margin:1%; 
+    margin:10px 1%; 
 }
 
 /*#area3_content .show_right{

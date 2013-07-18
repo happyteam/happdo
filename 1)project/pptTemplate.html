@@ -69,7 +69,16 @@
 		// 	$(".context").scrollTop($(document).height());
 		// }
 		function shift(dirction){
-			alert(dirction);
+			console.log($(".item1").css("margin-left"));
+			if(dirction == 'Right'){
+				//console.log('right');
+				$(".item1").animate({"margin-left": "+=33%"}, "slow");
+				//console.log('right2');
+			}else if(dirction == 'Left'){
+				//console.log('left');
+				$(".item1").animate({"margin-left": "-=33%"}, "slow");
+				//console.log('left2');
+			}
 		}
 
 
@@ -161,7 +170,7 @@
 			<h2>This is area three...</h2>
 			<div class="area3_arrow"><img src="images/left_arrow.png" alt="<<<" onclick="shift('Left')"></div>
 			<div id="area3_content">
-				<div class="show">123</div>
+				<div class="show item1">123</div>
 				<div class="show">456</div>
 				<div class="show">789</div>
 				<div class="show show_right">012</div>				
