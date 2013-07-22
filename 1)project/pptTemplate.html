@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>pptTemplate1</title>
-	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="script/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script/jquery.flexslider-min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -68,15 +68,33 @@
 		// 	window.scrollTo(0,400);
 		// 	$(".context").scrollTop($(document).height());
 		// }
+		var number = 1;
+		var LastShiftBox = 3;
 		function shift(dirction){
-			console.log($(".item1").css("margin-left"));
+			console.log($(".show:first()").css("margin-left"));
 			if(dirction == 'Right'){
 				//console.log('right');
-				$(".item1").animate({"margin-left": "+=33%"}, "slow");
+				$(".show:first").animate({"margin-left": "+=33%"}, "slow");
+				//remove first dispaly box "dispaly" class
+				$(".show:nth-child("+number+")").removeClass('dispaly');
+				console.log("Before first dispaly in the box:"+number);
+				LastShiftBox = LastShiftBox +number;
+				number += 1;
+				console.log("first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
+				$(".show:nth-child("+LastShiftBox+")").addClass('display');
+
+
+				//請加入考慮3以下
+				if($(".show:first").hasClass('display')){
+					$("#arrow_right img").css('visibility','hidden');
+				}else if($(".show:last").hasClass('display')){
+					$("#arrow_left img").css('visibility','hidden');
+				}
 				//console.log('right2');
 			}else if(dirction == 'Left'){
 				//console.log('left');
-				$(".item1").animate({"margin-left": "-=33%"}, "slow");
+				$(".show:first").animate({"margin-left": "-=33%"}, "slow");
+
 				//console.log('left2');
 			}
 		}
@@ -168,14 +186,16 @@
 		<div class="area_block"></div>
 		<div id="area3_inner_container">
 			<h2>This is area three...</h2>
-			<div class="area3_arrow"><img src="images/left_arrow.png" alt="<<<" onclick="shift('Left')"></div>
+			<div class="area3_arrow" id="arrow_left"><img src="images/left_arrow.png" alt="<<<" onclick="shift('Left')"></div>
 			<div id="area3_content">
-				<div class="show item1">123</div>
-				<div class="show">456</div>
-				<div class="show">789</div>
-				<div class="show show_right">012</div>				
+				<div class="show display">123</div>
+				<div class="show display">456</div>
+				<div class="show display">789</div>
+				<div class="show">abc</div>
+				<div class="show">wsx</div>
+				<div class="show">gjf</div>
 			</div>
-			<div class="area3_arrow" ><img src="images/right_arrow.png" alt=">>>" onclick="shift('Right')"></div>
+			<div class="area3_arrow" id="arrow_right" ><img src="images/right_arrow.png" alt=">>>" onclick="shift('Right')"></div>
 			<div class="clearLeft"></div>
 		</div>
 	</div>
