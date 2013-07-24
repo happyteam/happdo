@@ -74,27 +74,51 @@
 			console.log($(".show:first()").css("margin-left"));
 			if(dirction == 'Right'){
 				//console.log('right');
-				$(".show:first").animate({"margin-left": "+=33%"}, "slow");
-				//remove first dispaly box "dispaly" class
-				$(".show:nth-child("+number+")").removeClass('dispaly');
-				console.log("Before first dispaly in the box:"+number);
-				LastShiftBox = LastShiftBox +number;
-				number += 1;
-				console.log("first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
-				$(".show:nth-child("+LastShiftBox+")").addClass('display');
+				if(!$(".show:first").hasClass('display')){
+					$(".show:first").animate({"margin-left": "+=33%"}, "slow");
+					//remove first dispaly box "dispaly" class
+					$(".show:nth-child("+LastShiftBox+")").removeClass('dispaly');
+
+					number--;
+					LastShiftBox--;
+
+					console.log("first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
+					$(".show:nth-child("+number+")").addClass('display');
 
 
-				//請加入考慮3以下
-				if($(".show:first").hasClass('display')){
-					$("#arrow_right img").css('visibility','hidden');
-				}else if($(".show:last").hasClass('display')){
-					$("#arrow_left img").css('visibility','hidden');
+					//請加入考慮3以下
+					if($(".show:first").hasClass('display')){
+						console.log("1");
+						$("#arrow_right img").css('visibility','hidden');
+					}else if(!$(".show:last").hasClass('display')){
+						console.log("2");
+						$("#arrow_left img").css('visibility','visible');
+					}
 				}
 				//console.log('right2');
 			}else if(dirction == 'Left'){
 				//console.log('left');
-				$(".show:first").animate({"margin-left": "-=33%"}, "slow");
+				if(!$(".show:last").hasClass('display')){
 
+
+					$(".show:first").animate({"margin-left": "-=33%"}, "slow");
+					
+					console.log("Left：first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
+
+
+					$(".show:nth-child("+number+")").removeClass('display');
+					number++;
+					LastShiftBox++;
+					$(".show:nth-child("+LastShiftBox+")").addClass('display');
+
+					if($(".show:last").hasClass('display')){
+						console.log("3");
+						$("#arrow_left img").css('visibility','hidden');
+					}else if(!$(".show:first").hasClass('display')){
+						console.log("4");
+						$("#arrow_right img").css('visibility','visible');
+					}
+				}
 				//console.log('left2');
 			}
 		}
