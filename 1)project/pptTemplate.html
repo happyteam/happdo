@@ -73,7 +73,7 @@
 		function shift(dirction){
 			console.log($(".show:first()").css("margin-left"));
 			if(dirction == 'Right'){
-				//console.log('right');
+				// console.log('right');
 				if(!$(".show:first").hasClass('display')){
 					$(".show:first").animate({"margin-left": "+=33%"}, "slow");
 					//remove first dispaly box "dispaly" class
@@ -91,8 +91,7 @@
 						console.log("1");
 						$("#arrow_right img").css('visibility','hidden');
 					}else if(!$(".show:last").hasClass('display')){
-						console.log("2");
-						$("#arrow_left img").css('visibility','visible');
+						$("#arrow_right img").css('visibility','visible');
 					}
 				}
 				//console.log('right2');
@@ -102,21 +101,20 @@
 
 
 					$(".show:first").animate({"margin-left": "-=33%"}, "slow");
-					
-					console.log("Left：first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
 
 
 					$(".show:nth-child("+number+")").removeClass('display');
 					number++;
 					LastShiftBox++;
+
+					console.log("margin-left:"+$(".show").css('margin-left')+" Left：first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
 					$(".show:nth-child("+LastShiftBox+")").addClass('display');
 
 					if($(".show:last").hasClass('display')){
 						console.log("3");
 						$("#arrow_left img").css('visibility','hidden');
 					}else if(!$(".show:first").hasClass('display')){
-						console.log("4");
-						$("#arrow_right img").css('visibility','visible');
+						$("#arrow_left img").css('visibility','visible');
 					}
 				}
 				//console.log('left2');

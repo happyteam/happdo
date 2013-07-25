@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<style>
+			#area1{
+				width: 320px;
+				height: 110px;
+				overflow: hidden;
+			}
+			.show{
+				width:100px;
+				height:100px;
+				border:1px solid black;
+				display: inline-block;
+				margin: 1px;
+			}
+		</style>
+		<script type="text/javascript">
+			function shiftItem(direction){
+				if(direction == 'left'){
+					$(".show:first").animate({'margin-left':'-=100px'},'slow');
+				}else if(direction == 'right'){
+					$(".show:first").animate({'margin-left':'+=100px'},'slow');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="buttonClick" class="Left" value="Left" onclick="shiftItem('left');"/>
+		<div id="area1">
+			<div class="show">1</div>
+			<div class="show">2</div>
+			<div class="show">3</div>
+			<div class="show">4</div>
+			<div class="show">5</div>
+			<div class="show">6</div>
+		</div>
+		<input type="button" id="buttonClick" class="Right" value="Right" onclick="shiftItem('right');"/>
+	</body>
+</html>

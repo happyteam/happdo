@@ -340,13 +340,13 @@ header ul li a{
 }
 
 #area3_content .show{
-	width: 31%;
+	width: 30%;
 	height: 400px;
 	background-color: #E9EAEE;
 /*    border-right: gray 1px solid;*/
 	border:gray 1px solid;
-    float: left;
-    display: block;
+/*    float: left;*/
+    display: inline-block;
     margin:10px 1%; 
 }
 
