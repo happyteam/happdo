@@ -34,6 +34,12 @@
       		area2_li3 = area2_li3.substring(0,area2_li3.indexOf('px'))*4;
       		$("#area2_li3").val(area2_li3);
            	heightReset();
+
+           	/*area3 default*/
+           	$("#arrow_right img").css('visibility','hidden');
+           	if($(".show").length <=3){
+           		$("#arrow_left img").css('visibility','hidden');
+           	}
       	});
 
 
@@ -70,57 +76,35 @@
 		// }
 		var number = 1;
 		var LastShiftBox = 3;
-		function shift(dirction){
-			console.log($(".show:first()").css("margin-left"));
-			if(dirction == 'Right'){
-				// console.log('right');
-				if(!$(".show:first").hasClass('display')){
-					$(".show:first").animate({"margin-left": "+=33%"}, "slow");
-					//remove first dispaly box "dispaly" class
-					$(".show:nth-child("+LastShiftBox+")").removeClass('dispaly');
 
-					number--;
-					LastShiftBox--;
+		function shiftItem(dirction){
 
-					console.log("first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
-					$(".show:nth-child("+number+")").addClass('display');
+			if(dirction == 'Left'){
+				$(".show:nth-child("+number+")").removeClass('display');
+				++number;
+				++LastShiftBox;
+				$(".show:nth-child("+LastShiftBox+")").addClass('display');
+				$(".show:first").animate({"margin-left": "-=33%"}, "slow");
 
+				if($(".show:last").hasClass('display'))
+					$("#arrow_left img").css('visibility','hidden');
+				if(!$(".show:first").hasClass('display'))
+					$("#arrow_right img").css('visibility','visible')
+				
+			}else if(dirction == 'Right'){
 
-					//請加入考慮3以下
-					if($(".show:first").hasClass('display')){
-						console.log("1");
-						$("#arrow_right img").css('visibility','hidden');
-					}else if(!$(".show:last").hasClass('display')){
-						$("#arrow_right img").css('visibility','visible');
-					}
-				}
-				//console.log('right2');
-			}else if(dirction == 'Left'){
-				//console.log('left');
-				if(!$(".show:last").hasClass('display')){
+				$(".show:nth-child("+LastShiftBox+")").removeClass('display');
+				--number;
+				--LastShiftBox;
+				$(".show:nth-child("+number+")").addClass('display');
+				$(".show:first").animate({"margin-left": "+=33%"}, "slow");
 
-
-					$(".show:first").animate({"margin-left": "-=33%"}, "slow");
-
-
-					$(".show:nth-child("+number+")").removeClass('display');
-					number++;
-					LastShiftBox++;
-
-					console.log("margin-left:"+$(".show").css('margin-left')+" Left：first dispaly in the box:"+number +" LastShiftBox:"+LastShiftBox);
-					$(".show:nth-child("+LastShiftBox+")").addClass('display');
-
-					if($(".show:last").hasClass('display')){
-						console.log("3");
-						$("#arrow_left img").css('visibility','hidden');
-					}else if(!$(".show:first").hasClass('display')){
-						$("#arrow_left img").css('visibility','visible');
-					}
-				}
-				//console.log('left2');
+				if($(".show:first").hasClass('display'))
+					$("#arrow_right img").css('visibility','hidden')
+				if(!$(".show:last").hasClass('display'))
+					$("#arrow_left img").css('visibility','visible');
 			}
 		}
-
 
 	</script>
 </head>
@@ -208,7 +192,7 @@
 		<div class="area_block"></div>
 		<div id="area3_inner_container">
 			<h2>This is area three...</h2>
-			<div class="area3_arrow" id="arrow_left"><img src="images/left_arrow.png" alt="<<<" onclick="shift('Left')"></div>
+			<div class="area3_arrow" id="arrow_left"><img src="images/left_arrow.png" alt="<<<" onclick="shiftItem('Left')"></div>
 			<div id="area3_content">
 				<div class="show display">123</div>
 				<div class="show display">456</div>
@@ -217,7 +201,7 @@
 				<div class="show">wsx</div>
 				<div class="show">gjf</div>
 			</div>
-			<div class="area3_arrow" id="arrow_right" ><img src="images/right_arrow.png" alt=">>>" onclick="shift('Right')"></div>
+			<div class="area3_arrow" id="arrow_right" ><img src="images/right_arrow.png" alt=">>>" onclick="shiftItem('Right')"></div>
 			<div class="clearLeft"></div>
 		</div>
 	</div>
